@@ -233,5 +233,41 @@ footer {
   footer {
     font-size: 0.8em;
   }
+  }
+  .neon-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #000 0%, #090000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulseBg 8s infinite alternate;
+  }
+
+  .instrument-bg {
+    width: 90%;
+    max-width: 900px;
+    opacity: 0.08;
+    filter: drop-shadow(0 0 10px #ff0000);
+    animation: glowMove 12s linear infinite alternate;
+  }
+
+/* Red glow pulse */
+  @keyframes pulseBg {
+    0% { background-color: #000; }
+    100% { background-color: #0a0000; }
 }
+
+/* Slight floating animation */
+  @keyframes glowMove {
+    0% { transform: scale(1) translateY(0); opacity: 0.06; }
+    50% { transform: scale(1.05) translateY(-10px); opacity: 0.1; }
+    100% { transform: scale(1) translateY(0); opacity: 0.08; }
+}
+
 
